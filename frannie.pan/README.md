@@ -1,6 +1,6 @@
-# Hamilton Cline
+# Frannie Pan
 
 ## Important Links
 
-- https://hdraws.com
-- https://hdraws.com/aau/wnm617_01/cline.hamilton
+- http://www.franniepan.com/aau/wnm617/frannie.pan/
+- http://www.franniepan.com/aau/wnm617/frannie.pan/initializr/
