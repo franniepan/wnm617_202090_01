@@ -177,11 +177,15 @@ a {
    height:var(--header-height);
    line-height:var(--header-height);
    border-width:0;
-   background-color:#3A3E6B;
-   box-shadow:0px 0px 15px rgba(38, 43, 87, 0.5);
+
    position:relative;
    overflow:hidden;
 }
+
+.ui-footer {
+   background-color:#3A3E6B;
+   box-shadow:0px 0px 15px rgba(38, 43, 87, 0.5);
+  }
 
 .ui-header .ui-title {
    margin:0;
@@ -386,3 +390,104 @@ img.icon {
    border-radius:2em;
    box-shadow:0px 0px 15px rgba(38,43,87,0.5);
 }
+
+
+
+
+
+
+
+
+/* User Infor */
+.user-infor-item {
+   display: flex;
+   margin: 1em;
+   overflow: hidden;
+}
+.user-profile-image img {
+   vertical-align: text-bottom;
+   object-fit: cover;
+}
+.user-infor {
+   padding:1.4em;
+   flex: 1 1 auto;
+}
+
+
+
+
+.user-record {
+   display: flex;
+   margin: 1em;
+   background-color: #484D85;
+   border-radius: 1em;
+   overflow: hidden;
+}
+
+.user-record-in {
+  padding:18px;
+}
+
+
+.badge-icon{
+   display:flex;
+   margin-top:6px;
+   align-items:flex-end;
+
+
+}
+
+.badge-icon-single img{
+  width:75%;
+
+}
+
+
+
+
+
+
+/* SETTINGS */
+.settings-list {
+   list-style-type:none;
+   padding:0;
+   margin:0;
+}
+.settings-list a {
+   padding: 0.8em 1em;
+}
+.settings-list li:not(:first-child) {
+   border-top: 1px solid #5559B8;
+}
+
+.settings-list a {
+   display:block;
+   position: relative;
+}
+.settings-list a:not([href='#'])::after {
+   position:absolute;
+   content:'>';
+   top:50%;
+   right:1em;
+   transform:translateY(-50%);
+}
+
+
+
+
+
+/* ANIMAL LIST */
+
+.animallist-name {
+   font-size:1.2em;
+}
+
+
+.monster-item-single {
+  display: flex;
+  overflow: hidden;
+}
+
+
+
+

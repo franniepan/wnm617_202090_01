@@ -133,28 +133,93 @@
 
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Monsters</h1>
+
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-activate="#list-add-animal">+</a></li>
+            <li style="margin-top:5px"><a href="#" data-activate="#list-add-animal"><img src="img/icon/Add.png" class="icon"  style="float:right"></a></li>
          </ul>
       </header>
       <div data-role="main">
          <div class="overscroll">
-            <ul>
-               <!-- li*10>a[href=#animal-profile-page]>{Animal $} -->
-               <li><a href="#animal-profile-page">Monster 1</a></li>
-               <li><a href="#animal-profile-page">Monster 2</a></li>
-               <li><a href="#animal-profile-page">Monster 3</a></li>
-               <li><a href="#animal-profile-page">Monster 4</a></li>
-               <li><a href="#animal-profile-page">Monster 5</a></li>
-               <li><a href="#animal-profile-page">Monster 6</a></li>
-               <li><a href="#animal-profile-page">Monster 7</a></li>
-               <li><a href="#animal-profile-page">Monster 8</a></li>
-               <li><a href="#animal-profile-page">Monster 9</a></li>
+            
 
 
-            </ul>
+            <div class="animallist">
+
+               <div class="monster-item display-flex flex-justify-center">
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Blabbit.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Blabbit</div>
+                     </a>
+                  </div>
+
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Jellbilly.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Jellbilly</div>
+                     </a>
+                  </div>
+
+               </div>
+
+
+
+
+               <div class="monster-item display-flex flex-justify-center">
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Yool.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Yool</div>
+                     </a>
+                  </div>
+
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Jeeode.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Jeeode</div>
+                     </a>
+                  </div>
+
+               </div>
+
+
+               <div class="monster-item display-flex flex-justify-center">
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Hoola.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Hoola</div>
+                     </a>
+                  </div>
+
+                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
+                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
+                        <div class="monster-image">
+                           <img src="img/Boodoo.png" alt="" style="width:162px">
+                        </div>
+                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Boodoo</div>
+                     </a>
+                  </div>
+
+               </div>
+
+
+
+
+            </div>
+
+
+
          </div>
       </div>
       <footer data-role="footer">
@@ -191,11 +256,84 @@
       </div>
    </section>
 
+
+
    <section data-role="page" id="user-profile-page">
+
+
+      <header data-role="header">
+         <ul>
+            <li style="margin-top:5px"><a href="#user-settings-page"><img src="img/icon/Settings.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#user-profile-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+
       <div data-role="main">
-         User Profile<br>
-         <a href="#" class="js-logout">Logout</a>
+
+         <div class="user-infor-item" >
+            <div class="user-profile-image">
+               <img src="img/user_profile.png" alt="" style="width:100px;float:left">
+            </div>
+
+            <div class="user-infor">
+               <div style="font-size:1.5em;font-weight:700">Charlotte</div>
+               <div>charlotte@gmail.com</div>
+            </div>
+         </div>
+
+
+
+         <div class="user-record">
+            <div class="user-record-in">
+
+               <div class="infor-title">Type Discovered</div>
+
+               <div class="badge-icon">
+                  <div class="badge-icon-single">
+                     <img src="img/icon/Normal.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/Fire.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/Water.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/None.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/None.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/None.png" class="icon">
+                  </div>
+                  <div class="badge-icon-single">
+                     <img src="img/icon/None.png" class="icon">
+                  </div>
+
+               </div>
+            </div>
+
+         </div>
+
+
+         <div class="user-record">
+            <div class="user-record-in">
+               <div class="infor-title">Journal</div>
+
+            </div>
+
+               
+         </div>
+
+         </div>
+
+
+         
       </div>
+
+
       <footer data-role="footer">
          <ul>
             <li><a href="#recent-page"><img src="img/icon/Map.png" class="icon"></a></li>
@@ -205,17 +343,120 @@
       </footer>
    </section>
 
-   <section data-role="page" id="animal-profile-page">
+
+   <section data-role="page" id="user-settings-page">
       <header data-role="header">
-         <h1>Monster Profile</h1>
+         <h1>Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <ul class="settings-list">
+            <li><a href="#user-password-edit-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">Change Password</a></li>
+            <li><a href="#message-notifications-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">Message Notifications</a></li>
+            <li><a href="#about-monster-city-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">About Monster City</a></li>
+            <li><a href="#" class="js-logout" style="text-decoration:none;color:var(--color-neutral-mediumer)">Logout</a></li>
+         </ul>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-profile-edit-page">
+      <header data-role="header">
+         <h1>User Info</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-edit-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="user-edit-username" class="form-label">Username</label>
+               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="bronkula">
+            </div>
+            <div class="form-control">
+               <label for="user-edit-name" class="form-label">Full Name</label>
+               <input id="user-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your full name" value="Charlotte">
+            </div>
+            <div class="form-control">
+               <label for="user-edit-email" class="form-label">Email</label>
+               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="charlotte@gmail.com">
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-password-edit-page">
+      <header data-role="header">
+         <h1>Change Password</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-password-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="user-password-oldpassword" class="form-label">Old Password</label>
+               <input id="user-password-oldpassword" type="password" class="form-input" data-role="none" placeholder="Type your old password">
+            </div>
+            <div class="form-control">
+               <label for="user-password-password" class="form-label">New Password</label>
+               <input id="user-password-password" type="password" class="form-input" data-role="none" placeholder="Type your new password">
+            </div>
+            <div class="form-control">
+               <label for="user-password-confirm" class="form-label">Confirm Password</label>
+               <input id="user-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your new password">
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+
+   <section data-role="page" id="message-notifications-page">
+      <header data-role="header">
+         <h1>Message Notifications</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main">
          
       </div>
    </section>
+
+
+
+   <section data-role="page" id="about-monster-city-page">
+      <header data-role="header">
+         <h1>About Monster City</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+      </div>
+   </section>
+
+
+
+   <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+         <h1>Monster Profile</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+      </div>
+   </section>
+
 
 
 
