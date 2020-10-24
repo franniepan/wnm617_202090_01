@@ -29,7 +29,7 @@
             <img src="img/icon/thumbs.png" style="width:30vw;height:30vw;" class="icon" alt="">
          </div>
          <div class="display-flex flex-justify-center">
-         <h2 style="font-size:1.2em;margin-top:25px">MONSTER CITY</h2>
+         <h2 style="font-size:1.2em;padding-top:0.6em">MONSTER CITY</h2>
          </div>
 
 
@@ -53,6 +53,13 @@
             </div>
          </form>
       </div>
+
+
+      <div class="modal" id="signin-warning">
+         <div class="modal-toast top" data-deactivate="#signin-warning">
+            <div class="message">Failure</div>
+         </div>
+      </div>
    </section>
 
 
@@ -63,25 +70,29 @@
       <div data-role="main">
 
          <div class="display-flex flex-justify-center">
-            <h1 style="margin-top:5.5em">CREATE ACCOUNT</h1>
+            <h1 style="padding-top:3.5em">CREATE ACCOUNT</h1>
          </div>
 
-         <form id="signup-form" data-ajax="false" style="padding:3em;margin-top:-2.5em">
-            <div class="form-control">        
-               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Username">
+         <form id="signup-form" data-ajax="false" style="padding:0 3em">
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Username</label>        
+               <input id="signup-username" type="text" class="form-input" data-role="none">
             </div>
-            <div class="form-control">        
-               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Email">
+            <div class="form-control">   
+               <label for="signup-username" class="form-label">Email</label>      
+               <input id="signup-username" type="text" class="form-input" data-role="none">
             </div>
-            <div class="form-control">              
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Password">
+            <div class="form-control"> 
+               <label for="signup-username" class="form-label">Password</label>              
+               <input id="signup-password" type="password" class="form-input" data-role="none">
             </div>
-            <div class="form-control">        
-               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Confirm Password">
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Confirm Password</label>          
+               <input id="signup-username" type="text" class="form-input" data-role="none">
             </div>
 
             <div class="form-control">
-               <a href="#list-page" class="form-button" style="text-decoration:none;margin-top:4.2em">Sign up</a>
+               <a href="#list-page" class="form-button" style="text-decoration:none;margin-top:1.5em">Sign up</a>
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;margin-top:10em">
                Already have an account? <a href="#signin-page">Sign in now</a>
@@ -104,11 +115,46 @@
 
 
          <div class="modal" id="recent-drawer">
-            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->
-            <div class="modal-drawer left">
-               <div class="modal-head">Title</div>
+            <div class="modal-back" data-deactivate="#recent-drawer"></div>
+            <div class="modal-drawer bottom">              
                <div class="modal-body">
-                  Links and such
+                  <div class="display-flex flex-justify-center">
+                     <h1>Monster Spotted!</h1>
+                  </div>
+                  
+                  <form id="spotted-form" class="spotted-form" data-ajax="false">
+                     <div class="input-container">
+                        <div class="form-control">
+                           <label for="spotted-monster" class="form-label">
+                        What kind of monster did you find?
+                           </label>
+                           <div class="relative" style="position: relative">
+                              <div class="select-monster">
+                                 <select name="spotted-monster" id="spotted-monster" class="form-select" data-role="none">
+                                    <option value="" disabled selected>Select Monster</option>
+                                    <option value="monster1">Yool</option>
+                                    <option value="monster2">Boodoo</option>
+                                    <option value="monster3">Blabbit</option>
+                                    <option value="monster4">Hoola</option>
+                                    <option value="monster5">Jeeode</option>
+                                    <option value="monster6">Jellbilly</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-control">
+                           <label for="spotted-description" class="form-label"> 
+                              What's it doing?
+                           </label>
+                           <input id="spotted-description" type="text" class="form-input" data-role="none"/>
+                        </div>
+
+                     </div>
+                     <div class="form-control">
+                        <a href="#recent-page" data-deactivate="#recent-drawer" class="form-button" style="text-decoration:none;margin-top:1.6em">Submit</a>
+                     </div>
+                  </form>
+
                </div>
             </div>
          </div>
@@ -235,7 +281,7 @@
          <div class="modal-back" data-deactivate="#list-add-animal"></div>
          <form class="modal-popup" id="list-add-animal-form" data-ajax="false">
             <div class="modal-head"><h1>Add Monster</h1></div>
-            <div class="modal-body">
+            <div class="modal-bodypop">
                <div class="form-control">
                   <label for="list-add-name" class="form-label">Name</label>
                   <input id="list-add-name" type="text" class="form-input" data-role="none">
@@ -377,10 +423,6 @@
                <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="Charlotte">
             </div>
             <div class="form-control">
-               <label for="user-edit-name" class="form-label">Full Name</label>
-               <input id="user-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your full name" value="Charlotte Garcia">
-            </div>
-            <div class="form-control">
                <label for="user-edit-email" class="form-label">Email</label>
                <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="charlotte@gmail.com">
             </div>
@@ -450,6 +492,8 @@
          <h1>Monster Profile</h1>
          <ul>
             <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#animal-profile-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -466,13 +510,40 @@
                   <div style="color:var(--color-neutral-lighter)"><strong>Type:</strong>  Grass</div>
                </div>
 
-               <p>The Blabbit were spotted in 4 locations.</p>
+               <p>The Blabbit were spotted in 5 locations.</p>
             </div>
 
          <div>
             <img src="img/monster_spotted.png" alt="" style="width:400px">
          </div>
          
+      </div>
+   </section>
+
+
+      <section data-role="page" id="animal-profile-edit-page">
+      <header data-role="header">
+         <h1>Monster Info</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-edit-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="user-edit-username" class="form-label">Name</label>
+               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="Blabbit">
+            </div>
+            <div class="form-control">
+               <label for="user-edit-email" class="form-label">Abilities</label>
+               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="Chlorophyll">
+            </div>
+            <label for="user-edit-email" class="form-label">Type</label>
+               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="Grass">
+            </div>
+         </form>
       </div>
    </section>
 
