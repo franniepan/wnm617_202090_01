@@ -11,8 +11,12 @@
    <link rel="stylesheet" href="css/app.css">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="js/app.js"></script>
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
+   <script src="js/app.js"></script>
+   
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -192,74 +196,6 @@
 
             <div class="animallist">
 
-               <div class="monster-item display-flex flex-justify-center">
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Blabbit.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Blabbit</div>
-                     </a>
-                  </div>
-
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Jellbilly.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Jellbilly</div>
-                     </a>
-                  </div>
-
-               </div>
-
-
-
-
-               <div class="monster-item display-flex flex-justify-center">
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Yool.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Yool</div>
-                     </a>
-                  </div>
-
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Jeeode.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Jeeode</div>
-                     </a>
-                  </div>
-
-               </div>
-
-
-               <div class="monster-item display-flex flex-justify-center">
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Hoola.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Hoola</div>
-                     </a>
-                  </div>
-
-                  <div class="monster-item-single" style="padding:1px 2px 8px;margin: 0.3em">
-                     <a href="#animal-profile-page" class="ui-link" style="text-decoration:none">
-                        <div class="monster-image">
-                           <img src="img/Boodoo.png" alt="" style="width:162px">
-                        </div>
-                        <div class="monster-name" style="text-align:center;color:var(--color-neutral-lighter)">Boodoo</div>
-                     </a>
-                  </div>
-
-               </div>
-
-
 
 
             </div>
@@ -316,17 +252,7 @@
       </header>
 
       <div data-role="main">
-
-         <div class="user-infor-item" >
-            <div class="user-profile-image">
-               <img src="img/user_profile.png" alt="" style="width:100px;float:left">
-            </div>
-
-            <div class="user-infor">
-               <div style="font-size:1.5em;font-weight:700">Charlotte</div>
-               <div>charlotte@gmail.com</div>
-            </div>
-         </div>
+         <div class="profile"></div>
 
 
 
@@ -497,27 +423,9 @@
          </ul>
       </header>
       <div data-role="main">
-
-         <div class="monster-profile" style="background-color:#484D85;margin:0 20px;border-radius:1em">
-            <img src="img/Blabbit.png" alt="" style="width:200px;margin:auto;display:block">
-         </div>
-
-            <div style="padding:10px 20px 0 20px">
-               <h2>Blabbit</h2>
-            
-               <div style="padding-bottom:40px">
-                  <div style="color:var(--color-neutral-lighter)"><strong>Abilities:</strong>  Chlorophyll</div>
-                  <div style="color:var(--color-neutral-lighter)"><strong>Type:</strong>  Grass</div>
-               </div>
-
-               <p>The Blabbit were spotted in 5 locations.</p>
-            </div>
-
-         <div>
-            <img src="img/monster_spotted.png" alt="" style="width:400px">
-         </div>
-         
+         <div class="profile"></div>
       </div>
+         
    </section>
 
 
