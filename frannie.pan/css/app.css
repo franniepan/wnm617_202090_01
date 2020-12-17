@@ -33,13 +33,14 @@ body {
 }
 
 h1,
+h3,
 h2 {
    color:var(--color-neutral-light);
    font-family:var(--font-serif);
 }
 
 
-h3,
+
 h4,
 h5,
 h6 {
@@ -58,6 +59,32 @@ a {
       text-decoration: underline;
    }*/
 
+
+
+
+.gm-style .gm-style-iw, .animal-popup {
+  background-color:#484D85;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.gm-style .gm-style-iw-c { padding:0; }
+
+.gm-style .gm-style-iw-t::after {background: linear-gradient(50deg,rgba(53,57,97,1) 50%,rgba(53,57,97,0) 51%,rgba(53,57,97,0) 100%);}
+
+
+.animal-image img {
+  width:80px;
+}
+
+.animal-popup-description {
+  padding:1em;
+  color:#7DD4EE;
+  font-family: El Messiri;
+  font-size:15px;
+}
 
 
 
@@ -151,6 +178,44 @@ a {
    text-decoration:none;
    cursor:pointer;
 }
+
+
+.hotdog {
+   width: 100%;
+   display: inline-flex;
+   background-color: #2C3056;
+/*   border-width: 1px;
+   border-style: solid;
+   border-color: var(--color-neutral-medium);*/
+   padding: 0.5em 1em;
+   border-radius: 2em;
+   line-height:1;
+   margin-top:15px;
+}
+
+
+[data-role="header"]>.hotdog {
+   padding:0.7em 1em;
+}
+.hotdog>input {
+   flex:1;
+   border-width:0;
+   border-radius:0;
+   background-color:transparent;
+   font:inherit;
+   color:inherit;
+   outline:0;
+   padding:0;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -290,15 +355,16 @@ img.icon {
    justify-content:center;*/
    flex-direction:column;
 }
-#recent-page [data-role='main'] {
-   background-image:url('../img/map_example.png');
-   background-position:center;
-   background-size:cover;
+
+
+
+.map {
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
 }
-
-
-
-
 
 
 
@@ -469,6 +535,7 @@ img.icon {
 
 /* CIRCLE */
 .btn-circle {
+   display:inline-block;
    background-color:#3A3E6B;
    width:3rem;
    height:3rem;
@@ -492,16 +559,46 @@ img.icon {
    margin: 1em;
    overflow: hidden;
 }
-.user-profile-image img {
-   vertical-align: text-bottom;
-   object-fit: cover;
+
+
+/* Profile */
+.user-profile-image {
+   position:relative;
+
 }
+
+.user-profile-image>img {
+   width:calc(50vmin - 4em);
+   height:calc(50vmin - 4em);
+   margin:2em;
+   border-radius:50%;
+
+   object-fit:cover;
+}
+
 .user-infor {
    padding:1.4em;
    flex: 1 1 auto;
 }
 
 
+.user-profile-image a {
+   position:relative;
+   left: -4em;
+   top: -2em;
+
+}
+.user-profile-image a>img {
+  width: 30px;
+}
+
+
+.user-profile-information {
+  right: 1em;
+  width: 50%;
+  position: absolute;
+  top: 3em;
+}
 
 
 .user-record {
@@ -571,11 +668,58 @@ img.icon {
 }
 
 
+ .animallist {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
 .monster-item-single {
   display: flex;
   overflow: hidden;
 }
 
+
+
+
+.animallist-icon img {
+   width: 170px;
+   height: 170px;
+   vertical-align: text-bottom;
+   object-fit: cover;
+}
+/*.animallist-item {
+   display: flex;
+   margin: 1em;
+   background-color: #ffffff;
+   box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+   border-radius: 1em;
+   overflow: hidden;
+}*/
+
+ .animallist-item {
+  box-sizing: border-box;
+  position: relative;
+  /*flex-direction: column;*/
+  width: calc(50% - 5px);
+
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.animallist-description {
+   padding:0.5em;
+   flex: 1 1 auto;
+}
+.animallist-name {
+   font-size:1.3em;
+/*   color: var(--color-neutral-lighter);*/
+}
 
 
 
@@ -586,6 +730,80 @@ img.icon {
 
 
 
+#animal-profile-page [data-role='main'] {
+    display: flex;
+    flex-direction: column;
+}
+.profile-top {
+/*    height: 30vh;*/
+    flex: none;
+    overflow:auto;
+    position:relative;
+    margin-top:15px;
+    flex:1;
+}
+.profile-bottom {
+/*    flex: 1;*/
+    position: relative;
+    overflow:auto;
+}
 
+.animal-profile {
+  padding:0 1em;
+}
+
+.animal-profile-image img{
+  width:50vw;
+  height:50vw;
+  object-fit:cover;
+  margin: 0 auto;
+  display:block;
+}
+
+.animal-profile-edit-image img{
+  width:30vw;
+  height:30vw;
+  object-fit:cover;
+  margin: 0 auto;
+  margin-top: -15px;
+  display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+.filter-list {
+    display: flex;
+    overflow: auto;
+}
+.filter {
+    padding: 0 0.5em;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+
+
+.image-uploader input {
+   display:none;
+}
+.image-uploader.full {
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   background-position:center;
+   background-size:contain;
+   background-repeat:no-repeat;
+}
 
 

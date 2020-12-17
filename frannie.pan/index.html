@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="img/icon/thumbs.png">
+   <link rel="icon" href="img/icon/thumbs.png">
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Monster City</title>
 
@@ -12,13 +20,20 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/functions.js"></script>
-   <script src="js/pages.js"></script>
+   <script src="js/forms.js"></script>
+   <script src="js/maps.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/pages.js"></script>
+   
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
    
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_cxkL4Y-tgMp-6WLV5hgCkrWyNy3-icU" defer ></script>
+
+
 
 </head>
 <body>
@@ -68,6 +83,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <!-- /* SIGN UP PAGE */ -->
 
    <section data-role="page" id="signup-page">
@@ -83,20 +106,20 @@
                <input id="signup-username" type="text" class="form-input" data-role="none">
             </div>
             <div class="form-control">   
-               <label for="signup-username" class="form-label">Email</label>      
-               <input id="signup-username" type="text" class="form-input" data-role="none">
+               <label for="signup-email" class="form-label">Email</label>      
+               <input id="signup-email" type="email" class="form-input" data-role="none">
             </div>
             <div class="form-control"> 
-               <label for="signup-username" class="form-label">Password</label>              
+               <label for="signup-password" class="form-label">Password</label>              
                <input id="signup-password" type="password" class="form-input" data-role="none">
             </div>
             <div class="form-control">
-               <label for="signup-username" class="form-label">Confirm Password</label>          
-               <input id="signup-username" type="text" class="form-input" data-role="none">
+               <label for="signup-password-confirm" class="form-label">Confirm Password</label>          
+               <input id="signup-password-confirm" type="password" class="form-input" data-role="none">
             </div>
 
             <div class="form-control">
-               <a href="#list-page" class="form-button" style="text-decoration:none;margin-top:1.5em">Sign up</a>
+               <button type="submit" class="form-button" style="text-decoration:none;margin-top:1.5em" data-role="none">Sign up</button>
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em;margin-top:10em">
                Already have an account? <a href="#signin-page">Sign in now</a>
@@ -108,14 +131,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- /* RECENT PAGE */ -->
 
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
-         <div class="floater right bottom">
+         <div class="map"></div>
+
+<!--          <div class="floater right bottom">
             <div class="btn-circle" data-toggle="#recent-drawer">&plus;</div>
-         </div>
+         </div> -->
 
 
          <div class="modal" id="recent-drawer">
@@ -177,32 +215,49 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- /* MONSTER PAGE */ -->
 
 
 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-
-         <ul>
-            <li class="flex-stretch"></li>
-            <li style="margin-top:5px"><a href="#" data-activate="#list-add-animal"><img src="img/icon/Add.png" class="icon"  style="float:right"></a></li>
-         </ul>
+      <header data-role="header" style="padding:0 1em">
+         <form class="hotdog" id="list-search-form" data-ajax="false">
+            <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+         </form>
       </header>
+      <header data-role="header">
+         <div class="filter-list"></div>
+      </header>
+
+<!--          <ul>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#animal-add-page"><img src="img/icon/Add.png" class="icon"  style="float:right"></a></li>
+         </ul> -->
+
       <div data-role="main">
          <div class="overscroll">
-            
-
-
-            <div class="animallist">
-
-
-
-            </div>
-
-
-
+            <div class="animallist"></div>         
          </div>
+
+            <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page" style="text-decoration:none">&plus;</a></div>
+
       </div>
       <footer data-role="footer">
          <ul>
@@ -211,32 +266,18 @@
             <li><a href="#user-profile-page"><img src="img/icon/Profile.png" class="icon"></a></li>
          </ul>
       </footer>
-
-
-      <div class="modal" id="list-add-animal">
-         <div class="modal-back" data-deactivate="#list-add-animal"></div>
-         <form class="modal-popup" id="list-add-animal-form" data-ajax="false">
-            <div class="modal-head"><h1>Add Monster</h1></div>
-            <div class="modal-bodypop">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-type" class="form-label">Abilities</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Type</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none">
-               </div>
-            </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none" class="form-button">
-            </div>
-         </form>
-      </div>
    </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -247,7 +288,7 @@
          <ul>
             <li style="margin-top:5px"><a href="#user-settings-page"><img src="img/icon/Settings.png" class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li style="margin-top:5px"><a href="#user-profile-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
+            <li style="margin-top:5px"><a href="#user-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
          </ul>
       </header>
 
@@ -325,7 +366,7 @@
       </header>
       <div data-role="main">
          <ul class="settings-list">
-            <li><a href="#user-password-edit-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">Change Password</a></li>
+            <li><a href="#user-password-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">Change Password</a></li>
             <li><a href="#message-notifications-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">Message Notifications</a></li>
             <li><a href="#about-monster-city-page" style="text-decoration:none;color:var(--color-neutral-mediumer)">About Monster City</a></li>
             <li><a href="#" class="js-logout" style="text-decoration:none;color:var(--color-neutral-mediumer)">Logout</a></li>
@@ -333,30 +374,32 @@
       </div>
    </section>
 
-   <section data-role="page" id="user-profile-edit-page">
+
+
+
+
+
+
+
+
+   <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>User Info</h1>
          <ul>
             <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+            <li style="margin-top:5px"><a href="#" class="js-user-edit"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
          </ul>
       </header>
+
+
       <div data-role="main">
          <form id="user-edit-form" data-ajax="false" style="padding:1em">
-            <div class="form-control">
-               <label for="user-edit-username" class="form-label">Username</label>
-               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="Charlotte">
-            </div>
-            <div class="form-control">
-               <label for="user-edit-email" class="form-label">Email</label>
-               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="charlotte@gmail.com">
-            </div>
          </form>
       </div>
    </section>
 
-   <section data-role="page" id="user-password-edit-page">
+   <section data-role="page" id="user-password-page">
       <header data-role="header">
          <h1>Change Password</h1>
          <ul>
@@ -382,6 +425,33 @@
          </form>
       </div>
    </section>
+
+
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" class="js-user-upload"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+         <label for="user-upload-input" class="form-button">Choose Image</label>
+      </div>
+   </section>
+
+
+
+
+
 
 
 
@@ -413,48 +483,150 @@
 
 
 
+
+
+
+
+
+
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1>Monster Profile</h1>
          <ul>
             <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li style="margin-top:5px"><a href="#animal-profile-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
+            <li style="margin-top:5px"><a href="#animal-edit-page"><img src="img/icon/Edit_Profile.png" class="icon" style="float:right"></a></li>
          </ul>
       </header>
       <div data-role="main">
-         <div class="profile"></div>
+
+         <div class="profile-bottom">
+            <div class="profile"></div>
+         </div>
+         <div class="profile-top">
+            <div class="map"></div>
+            <div class="floater right bottom">
+               <a href="#location-add-page" class="btn-circle" style="text-decoration:none">&plus;</a>
+            </div>
+         </div>
       </div>
          
    </section>
 
 
-      <section data-role="page" id="animal-profile-edit-page">
+      <section data-role="page" id="animal-edit-page">
       <header data-role="header">
          <h1>Monster Info</h1>
          <ul>
             <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+            <li style="margin-top:5px"><a href="#" class="js-animal-edit"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
          </ul>
       </header>
       <div data-role="main">
-         <form id="user-edit-form" data-ajax="false" style="padding:1em">
-            <div class="form-control">
-               <label for="user-edit-username" class="form-label">Name</label>
-               <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your user name" value="Blabbit">
-            </div>
-            <div class="form-control">
-               <label for="user-edit-email" class="form-label">Abilities</label>
-               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="Chlorophyll">
-            </div>
-            <label for="user-edit-email" class="form-label">Type</label>
-               <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your user email" value="Grass">
-            </div>
+         <form id="animal-edit-form" data-ajax="false" style="padding:1em">
          </form>
       </div>
    </section>
 
+
+
+
+
+   <section data-role="page" id="animal-add-page">
+      <header data-role="header">
+      <h1>Monster Info</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" class="js-animal-add"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+         <form id="animal-add-form" data-ajax="false" style="padding:1em">
+
+               <input type="hidden" id="animal-add-destination" value="#list-page">
+
+               <div class="form-control">
+                  <label for="animal-add-name" class="form-label">Name</label>
+                  <input id="animal-add-name" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-add-type" class="form-label">Type</label>
+                  <input id="animal-add-type" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-add-breed" class="form-label">Breed</label>
+                  <input id="animal-add-breed" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-add-ability" class="form-label">Ability</label>
+                  <input id="animal-add-ability" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-add-description" class="form-label">Description</label>
+                  <textarea id="animal-add-description" class="form-input" data-role="none"></textarea>
+               </div>   
+         </form>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <section data-role="page" id="location-add-page">
+      <header data-role="header">
+         <h1>Select Location</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#location-description-page"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-add-lat">
+         <input type="hidden" id="location-add-lng">
+         <div class="map"></div>
+      </div>
+   </section>
+
+   <section data-role="page" id="location-description-page">
+      <header data-role="header">
+         <h1>Describe the Monster</h1>
+         <ul>
+            <li style="margin-top:5px"><a href="#" data-rel="back"><img src="img/icon/Back.png" class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li style="margin-top:5px"><a href="#" class="js-location-add"><img src="img/icon/Save.png" class="icon" style="float:right"></a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <form id="location-add-form" data-ajax="false" style="padding:1em">
+
+               <div class="form-control animal-profile-image">
+                  <img src="https://via.placeholder.com/400/?text=Upload" alt="">
+               </div>
+            
+               <div class="form-control">
+                  <label for="location-add-description" class="form-label">Description</label>
+                  <textarea id="location-add-description" class="form-input" data-role="none"></textarea>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
 
 
 

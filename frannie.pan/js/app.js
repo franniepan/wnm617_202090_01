@@ -1,10 +1,9 @@
 
 
 
-
-
-
 $(()=>{
+
+
 
 
    checkUserId();
@@ -17,10 +16,18 @@ $(()=>{
 
       // Page Routing
       switch(ui.toPage[0].id) {
+
          case "recent-page": RecentPage(); break;
          case "list-page": ListPage(); break;
+
          case "user-profile-page": UserProfilePage(); break;
+         case "user-edit-page": UserEditPage(); break;
+         case "user-upload-page": UserUploadPage(); break;
+
          case "animal-profile-page": AnimalProfilePage(); break;
+         case "animal-edit-page": AnimalEditPage(); break;
+
+         case "location-add-page": LocationAddPage(); break;
       }
    })
 
@@ -33,6 +40,49 @@ $(()=>{
       checkSigninForm();
    })
 
+   .on("submit","#signup-form",function(e){
+      e.preventDefault();
+      checkSignupForm();
+   })
+   .on("submit","#list-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
+
+
+
+
+   // FORM SUBMIT CLICKS
+
+   .on("click",'.js-user-edit',function(e){
+      checkUserEditForm();
+   })
+   .on("click",'.js-animal-add',function(e){
+      checkAnimalAddForm();
+   })
+   .on("click",'.js-animal-edit',function(e){
+      checkAnimalEditForm();
+   })
+   .on("click",'.js-location-add',function(e){
+      checkLocationAddForm();
+   })
+   .on("click",'.js-user-upload',function(e){
+      checkUserUploadForm();
+   })
+
+
+
+
+   .on("click",".filter",function(){
+      checkListFilter($(this).data());
+   })
+   .on("change",".image-uploader input",function(){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         makeUploaderImage(this,d.result,'uploads/')
+      })
+   })
 
 
 
@@ -48,6 +98,17 @@ $(()=>{
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate('#animal-profile-page');
    })
+
+   .on("click",'.js-animal-delete',function(e){
+      checkAnimalDelete($(this).data("id"));
+   })
+
+
+
+
+
+
+
 
 
 
